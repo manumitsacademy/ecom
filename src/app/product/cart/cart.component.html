@@ -1,0 +1,19 @@
+
+<table>
+  <tr>
+    <td>S.No</td>
+    <td>Name</td>
+    <td>Image</td>
+    <td>Price</td>
+    <td>Count</td>
+    <td>Total</td>
+  </tr>
+  <tr *ngFor="let product of cartProducts;let i = index">
+    <td>{{i+1}}</td>
+    <td>{{product.Name}}</td>
+    <td><img [src]="product.ProductPicUrl" width="100px"></td>
+    <td>{{product.Price|currency:product.CurrencyCode}}</td>
+    <td><app-counter [index]="i"></app-counter></td>
+    <td>{{product.Price*product.count}}</td>
+  </tr>
+</table>
